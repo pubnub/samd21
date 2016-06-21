@@ -34,10 +34,11 @@ The temperature sensor will measure the ambient temperature and publish it as a 
 1. Windows PC
 2. Sign up for [PubNub](https://www.pubnub.com), and get a set of publish and subscribe keys 
 3. Install Atmel Studio 6.2
-4. Install updates to Atmel Studio as suggested during installation 
-5. Install terminal software like putty or teraterm (I have used putty)
+4. Instal ASF
+5. Install updates to Atmel Studio as suggested during installation
+6. Install terminal software like putty or teraterm (I have used putty)
 
-**A prerequisite is that you upgrade the firmware for SAMD21 using the [.bat](Code/FirwareUpgrade/samd21_xplained_pro_firmware_update.bat) file provided with the PubNub Atmel example before you run this demo. Make sure no other software like putty or teraterm is using the com port). Close atmel  studio and the putty terminal. The firmware upgrade is successful if you see a PASS sign on the terminal after running the code.**
+**A prerequisite is that you upgrade the firmware for SAMD21 before you run this demo. Make sure no other software like putty or teraterm is using the com port). Close Atmel studio and the putty terminal. The firmware upgrade is successful if you see a PASS sign on the terminal after running the code.**
 
 
 ###2. Connecting the hardware, the right way : 
@@ -53,11 +54,11 @@ The temperature sensor will measure the ambient temperature and publish it as a 
 	
 ###3. The Software 
 
-3.1 Open the PubNub example [solution](Code/pubnubAtmelExample/PubNub_EXAMPLE.atsln) on Atmel Studio and you will see the following page. Make sure you choose the debugger/programmer and interface as shown: 
+3.1 Open the PubNub example solution in Atmel Studio and you will see the following page. Make sure you choose the debugger/programmer and interface as shown: 
 
 ![alt text](images/opening.png)	
 
-3.2  Include the following lines in Code/pubnubAtmel/src/main.h: 
+3.2  Include the following lines in `main.h`: 
 	
 ```
 #define TEST_MODE_SSID "Enter-your-SSID"	(choose THE Wi-Fi access point you want the chip to connect to)
@@ -65,7 +66,7 @@ The temperature sensor will measure the ambient temperature and publish it as a 
 #define TEST_MODE_WITHOUT_PROVISION
 ```
 
-3.3 In code/pubnubAtmel/src/main.c, add the channel name and pub, sub keys. 
+3.3 In `main.c`, add the channel name and pub, sub keys. 
 
 ![alt text](images/channel.png)	
 
